@@ -1,0 +1,23 @@
+mixin navMenu(link, text, active)
+  if(active)
+    li.header__nav-item.active
+      a.header__nav-link(href=link)=text
+  else
+    li.header__nav-item
+      a.header__nav-link(href=link)=text
+
+header.header
+  a.header__logo(href="#")
+    svg.header__svg-logo(role="img" width="" height="")
+      use(xlink:href="")
+    p.header__text-logo #bladefashion2019
+  .header__menu
+    ul.header__nav
+      +navMenu('#1', 'ГЛАВНАЯ', true)
+      +navMenu('#2', 'УЧАСТНИКИ')
+      +navMenu('#3', 'ЖЮРИ')
+      +navMenu('#4', 'БИЛЕТЫ')
+      +navMenu('#5', 'КОНТАКТЫ')
+    
+
+
