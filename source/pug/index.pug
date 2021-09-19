@@ -1,4 +1,6 @@
 extends layout/doctype
+include layout/section/mixin
+
 
 block content
   body
@@ -7,4 +9,5 @@ block content
       include layout/section/promo
       include layout/section/party
       include layout/section/judges
+      include layout/section/ticket
     script(src="swiper/swiper-bundle.min.js")

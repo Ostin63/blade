@@ -1,0 +1,67 @@
+mixin pay(cards)
+  for i in cards
+    li.ticket__pay-item
+      img(src="img/" +i.src, alt="i.alt")
+
+mixin table(chicked)
+  if(chicked)
+    td
+      svg.ticket__svg-shape(role="img" aria-label="alt" width="13" height="10")
+        use(xlink:href="img/stack.svg#shape")
+  else
+    td
+
+section.ticket
+  h2.ticket__title Билеты
+  .ticket__wrapper-text
+    p.ticket__text Вы можете приобрести билеты на Blade Fashion Week на нашем сайте: достаточно выбрать один из типов билетов (в зависимости от предлагаемых опций) и произвести оплату онлайн. Мы принимаем оплату:
+    ul.ticket__pay
+      +pay([{src: "visa.png", alt: "виза"}, {src: "pay.png", alt: "пай"}, {src: "master-card.png", alt: "мастер кард"}, {src: "pay-pal.png", alt: "пай пал"}])
+    p.ticket__text По всем вопросам, связанным с покупокй, возвратомили предлагаемыми опциями, вы можете обратиться к нашему консультанту по номеру:
+    a.ticket__tel(href="tel:+79244567890") +7 (924) 456 78 90
+  table.ticket__table
+    tr
+      th
+      th ЗРИТЕЛЬ
+      th ОПТИМУМ
+      th VIP
+    tr
+      td Пакет гостя форума
+      +table(true)
+      +table(true)
+      +table(true)
+    tr
+      td Церемония открытия
+      +table(true)
+      +table(true)
+      +table(true)
+    tr
+      td Вход на показ
+      +table(true)
+      +table(true)
+      +table(true)
+    tr
+      td Возможность голосовать
+      +table(false)
+      +table(true)
+      +table(true)
+    tr
+      td Доступ за кулисы
+      +table(false)
+      +table(true)
+      +table(true)
+    tr
+      td Эксклюзив от кутюрье
+      +table(false)
+      +table(false)
+      +table(true)
+    tr
+      td
+      td
+        a.ticket__table-button КУПИТЬ
+      td
+        a.ticket__table-button КУПИТЬ
+      td
+        a.ticket__table-button КУПИТЬ
+
+

@@ -1,0 +1,4 @@
+mixin arrows(className, calassSvg, width, height)
+  div(class="" +className)
+    svg(class="" +calassSvg role="img" width=width height=height)
+      use(xlink:href="img/stack.svg#arrow")

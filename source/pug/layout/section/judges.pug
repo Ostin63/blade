@@ -1,2 +1,26 @@
+mixin judges(name, src, land, text, ...items)
+  .judges__item.swiper-slide
+    .judges__item-wrapper
+      .judges__mask
+        img.judges__img(src="img/" +src, alt="Фото " +name)
+      .judges__card
+        p.judges__name=name
+        p.judges__land=land
+        p.judges__text=text
+        ul.judges__social
+          each item in items
+            li.judges__social-item
+              a.judges__social-link(href="#")
+                svg.judges__social-svg(role="img" aria-label="alt" width="24" height="24")
+                  use(xlink:href="img/stack.svg#" +item)
+
 section.judges
-  h2.judges__title Судьи BFW`19 
+  h2.judges__title Судьи BFW`19
+  .judges__container.swiper-container
+    .judges__catalog.swiper-wrapper
+      +judges("Давис Бертанс", "bertans.png", "Литва", "Владелец модного дома в Литве. Судья показов young blood Vilnus.", "fb", "twitter")
+      +judges("Георгий Рубильников", "rubilnikov.png", "Россия", "Дизайнер, работающий с Gucci, владелец салона в Санкт-Петербурге.","insta", "fb", "twitter")
+      +judges("Давид Гегенешвили", "gegeneshvily.png", "Грузия", "Создатель Georgia Runway Project. Главный судья на young blood Moscow.","insta", "fb")
+    .judges__arrows
+      +arrows("judges__button judges__button--next", "judges__svg judges__svg--next", "43", "80")
+      +arrows("judges__button judges__button--prev", "judges__svg judges__svg--prev", "43", "80")
