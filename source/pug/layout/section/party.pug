@@ -11,8 +11,8 @@ mixin party(linkImgs,srcAuthor,name,land, socials)
               img.party__img(src=i.src, alt="photo" width="448" height="580")
               span.party__clarification=i.clarification
         .party__arrows-img
-          +arrows("party__button-img party__button-img--next", "party__img-svg party__img-svg--next", "10", "20")
-          +arrows("party__button-img party__button-img--prev", "party__img-svg party__img-svg--prev", "10", "20")
+          +svgBlock("party__button-img party__button-img--next", "party__img-svg party__img-svg--next", "10", "20", "arrow")
+          +svgBlock("party__button-img party__button-img--prev", "party__img-svg party__img-svg--prev", "10", "20", "arrow")
       .party__wrapper-author
         .party__img-mask
           img.party__img-author(src=srcAuthor, alt="Photo author")
@@ -32,5 +32,5 @@ section.party
       +party([{src: "img/photo-kelli.jpg", clarification: "авангард, имрессионизм"}, {src: "img/photo-devid.jpg", clarification: "классика, нуар"}, {src: "img/photo-kostasi.jpg", clarification: "эклектика, экотренд"}], "img/kelly.png", "Келли Макдональд", "ИРЛАНДИЯ", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
       +party([{src: "img/photo-kostasi.jpg", clarification: "эклектика, экотренд"}, {src: "img/photo-kelli.jpg", clarification: "авангард, имрессионизм"}, {src: "img/photo-devid.jpg", clarification: "классика, нуар"}], "img/kostas.png", "Костас Папаниколау", "Греция", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
     .party__arrows
-      +arrows("party__button party__button--next", "party__svg party__svg--next", "43", "80")
-      +arrows("party__button party__button--prev", "party__svg party__svg--prev", "43", "80")
+      +svgBlock("party__button party__button--next", "party__svg party__svg--next", "43", "80", "arrow")
+      +svgBlock("party__button party__button--prev", "party__svg party__svg--prev", "43", "80", "arrow")

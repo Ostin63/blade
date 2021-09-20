@@ -7,10 +7,11 @@ mixin navMenu(link, text, active)
       a.header__nav-link(href=link)=text
 
 header.header
-  a.header__logo(href="#")
-    svg.header__svg-logo(role="img" width="260" height="145")
-      use(xlink:href="img/stack.svg#top-logo")
-    p.header__text-logo #bladefashion2019
+  +svgLink("header__logo", "header__svg-logo", "260", "145", "#", "top-logo")
+  p.header__text-top #bladefashion2019
+  .header__toggle-menu
+    +svg("header__menu-open-svg active", "28", "17", "menu")
+    +svg("header__menu-close-svg", "28", "17", "close")
   .header__menu
     ul.header__nav
       +navMenu('#1', 'ГЛАВНАЯ', true)
@@ -18,6 +19,17 @@ header.header
       +navMenu('#3', 'ЖЮРИ')
       +navMenu('#4', 'БИЛЕТЫ')
       +navMenu('#5', 'КОНТАКТЫ')
-
-
-
+    .header__select-menu
+      p.header__select-display РУС
+      ul.header__select
+        li.header__select-item
+          a.header__select-link.header__select-link--ru.active(href="#") РУС
+        li.header__select-item
+          a.header__select-link.header__select-link--us(href="#") АНГЛ
+    ul.header__social-modal
+      li.header__social-item
+        +svgLink("header__social-link", "header__social-svg", "18", "35", "#", "fb")
+      li.header__social-item
+        +svgLink("header__social-link", "header__social-svg", "34", "34", "#", "insta")
+      li.header__social-item
+        +svgLink("header__social-link", "header__social-svg", "35", "29", "#", "twitter")

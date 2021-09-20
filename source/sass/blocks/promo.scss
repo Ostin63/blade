@@ -1,0 +1,140 @@
+.promo {
+  position: relative;
+  background: $gradient-purpur;
+
+  &::before {
+    position: absolute;
+    width: 320px;
+    height: 219px;
+    top: 104px;
+    right: 0;
+    display: block;
+    content: "";
+    background-image: url("../img/bfw.png");
+    background-repeat: no-repeat;
+    background-size: 320px 219px;
+    background-position: 50% 50%;
+
+    @media (min-width: $tablet-width) {
+      width: 768px;
+      height: 504px;
+      top: 120px;
+      background-size: 768px 504px;
+    }
+  }
+}
+
+.promo__wrapper {
+  position: relative;
+  padding: 142px 16px 64px;
+}
+
+.promo__title {
+  margin: 0;
+  font-style: 900;
+  font-size: 32px;
+  line-height: 35.2px;
+  letter-spacing: 3%;
+  font-family: $font-playfairdisplay;
+  color: $white;
+
+  @media (min-width: $tablet-width) {
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 110%;
+    letter-spacing: 0.03em;
+    opacity: 0.87;
+  }
+}
+
+.promo__info {
+  margin: 12px 0 41px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.promo__info-item {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+    content: "";
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 64px auto;
+  }
+
+  &--data {
+    &::before {
+      background-image: url("../img/stack.svg#calendar");
+    }
+  }
+
+  &--city {
+    &::before {
+      background-image: url("../img/stack.svg#location");
+    }
+  }
+
+  &--place {
+    &::before {
+      background-image: url("../img/stack.svg#winner");
+    }
+  }
+}
+
+.promo__info-text {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: $font-lato;
+  color: $white;
+
+  opacity: 0.74;
+}
+
+.promo__button {
+  width: 274px;
+  height: 68px;
+  padding-left: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $white;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: $font-lato;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: $black-100;
+
+  &::after {
+    width: 78px;
+    height: 68px;
+    content: "";
+    display: block;
+    background-color: $gold;
+    background-image: url("../img/stack.svg#arrow-button");
+    background-repeat: no-repeat;
+    background-size: 36px auto;
+    background-position: 50%;
+  }
+}
+
+.promo__social {
+  display: none;
+}
+
+// .promo__item {}
+
+// .promo__social-link {}
+
+// .promo__social-svg {}

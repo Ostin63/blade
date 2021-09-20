@@ -1,4 +1,13 @@
-mixin arrows(className, calassSvg, width, height)
+mixin svgBlock(className, calassSvg, width, height, link)
   div(class="" +className)
     svg(class="" +calassSvg role="img" width=width height=height)
-      use(xlink:href="img/stack.svg#arrow")
+      use(xlink:href="img/stack.svg#" +link)
+
+mixin svgLink(className, calassSvg, width, height, link, linkSvg)
+  a(class="" +className, href="" +link)
+    svg(class="" +calassSvg role="img" width=width height=height)
+      use(xlink:href="img/stack.svg#" +linkSvg)
+
+mixin svg(calassSvg, width, height, link)
+  svg(class="" +calassSvg role="img" width=width height=height)
+    use(xlink:href="img/stack.svg#" +link)

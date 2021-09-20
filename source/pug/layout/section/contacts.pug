@@ -1,0 +1,35 @@
+section.contacts
+  h2.contacts__title Свяжитесь с нами
+  .contacts__wrapper-info
+    ul.contacts__info
+      li.contacts__info-item
+        p.contacts__item-title офис продаж
+        p.contacts__item-text 363561, Москва <br>ул. Пушкина 17/1
+      li.contacts__info-item
+        p.contacts__item-title для связи
+      li.contacts__info-item
+        p.contacts__item-title для связи
+        a.contacts__item-tel(href="tel:+79244567890") +7 (924) 456 78 90
+        a.contacts__item-mail(href="mailto: bfw@gmail.com") bfw@gmail.com
+        ul.contacts__social
+          li.contacts__social-item
+            +svgBlock("contacts__wrapper-svg", "contacts__svg", "24", "24", "fb")
+          li.contacts__social-item
+            +svgBlock("contacts__wrapper-svg", "contacts__svg", "24", "24", "insta")
+          li.contacts__social-item
+            +svgBlock("contacts__wrapper-svg", "contacts__svg", "24", "24", "twitter")
+    .contacts__wrapper-map
+      .contacts__map#contacts__map
+  .contacts__form-wrapper
+    h2.contacts__title Отсались вопросы? Спросите нас! Мы ответим!
+    form.contacts__form#contacts__form(action="", method="post")
+      .contacts__form-input-block
+        label.contacts__form-label(for="fullName") имя
+        input.contacts__form-input#fullName(type="text", name="fullName", placeholder="Введите имя")
+      .contacts__form-input-block
+        label.contacts__form-label(for="email") email
+        input.contacts__form-input#email(type="email", name="email", placeholder="Введите e-mail")
+      .contacts__form-input-block
+        label.contacts__form-label(for="textarea") Сообщение
+        textarea.contacts__form-textarea#textarea(name="textarea", cols="30", rows="5", placeholder="Задайте любой вопрос")
+      button.contacts__form-submit(type="submit") отправить

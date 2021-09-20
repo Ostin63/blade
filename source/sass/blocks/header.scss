@@ -1,0 +1,260 @@
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 108px 1fr 44px 16px;
+  grid-template-rows: 72px max-content;
+  z-index: 10;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 20px 138px 1fr 44px 40px;
+    grid-template-rows: 92px max-content;
+  }
+
+  &.active {
+    position: relative;
+    background: $gradient-purpur;
+
+    &::before {
+      position: absolute;
+      width: 320px;
+      height: 219px;
+      top: 104px;
+      right: 0;
+      display: block;
+      content: "";
+      background-image: url("../img/bfw.png");
+      background-repeat: no-repeat;
+      background-size: 320px 219px;
+      background-position: 50% 50%;
+
+      @media (min-width: $tablet-width) {
+        width: 768px;
+        height: 504px;
+        top: 120px;
+        background-size: 768px 504px;
+      }
+    }
+  }
+}
+
+.header__logo {
+  width: 108px;
+  height: 72px;
+  display: block;
+  background: $white;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+
+  @media (min-width: $tablet-width) {
+    width: 138px;
+    height: 92px;
+    grid-column: 2 / 3;
+  }
+}
+
+.header__svg-logo {
+  width: 108px;
+  height: 60px;
+  margin-top: 6px;
+
+  @media (min-width: $tablet-width) {
+    width: 138px;
+    height: 77px;
+    margin-top: 7px;
+  }
+}
+
+.header__text-top {
+  position: absolute;
+  top: 112px;
+  left: 16px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: $font-lato;
+  letter-spacing: 0.02em;
+  color: $gold;
+
+  &.d-none {
+    display: none;
+  }
+}
+
+.header__menu-open-svg {
+  width: 44px;
+  height: 44px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.header__menu-open-svg,
+.header__menu-close-svg {
+  width: 28px;
+  height: 17px;
+  margin: 13px auto;
+  fill: $white;
+}
+
+.header__menu-close-svg {
+  width: 21px;
+  height: 21px;
+  display: none;
+  fill: $white;
+
+  &.active {
+    display: block;
+  }
+}
+
+.header__toggle-menu {
+  width: 44px;
+  height: 44px;
+  margin: auto 0;
+  grid-column: -3 / -2;
+  grid-row: 1 / 2;
+
+  &:hover .header__menu-open-svg,
+  &:hover .header__menu-close-svg,
+  &:focus .header__menu-open-svg,
+  &:focus .header__menu-close-svg {
+    fill: $gold;
+  }
+}
+
+
+.header__menu {
+  width: 100%;
+  height: 608px;
+  display: none;
+
+  &.active {
+    display: block;
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+  }
+
+  z-index: 100;
+}
+
+.header__nav {
+  margin: 0;
+  padding: 16px 0;
+  list-style: none;
+}
+
+.header__nav-item {
+  height: 60px;
+  margin: 24px 16px 0;
+  display: flex;
+  border-bottom: $border-16;
+
+  &:last-child {
+    border: none;
+  }
+}
+
+.header__nav-link {
+  margin: 0 auto;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 110%;
+  font-family: $font-playfairdisplay;
+  letter-spacing: 0.03em;
+  color: $white;
+  opacity: 0.87;
+}
+
+.header__select-menu {
+  position: absolute;
+  top: 26px;
+  right: 96px;
+
+  @media (min-width: $tablet-width) {
+    top: 36px;
+    right: 120px;
+  }
+}
+
+.header__select-display {
+  display: none;
+}
+
+.header__select {
+  width: 85px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__select-item {
+  display: block;
+}
+
+.header__select-link {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: $font-lato;
+  letter-spacing: -0.02em;
+  color: $white;
+  opacity: 0.16;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &--ru {
+    &::after {
+      margin-left: 3px;
+      content: "/";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      font-family: $font-lato;
+      letter-spacing: -0.02em;
+      color: $white;
+      opacity: 0.16;
+    }
+  }
+}
+
+.header__social-modal {
+  width: 180px;
+  margin: 40px auto 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__social-item {
+  display: block;
+}
+
+.header__social-link {
+  display: block;
+}
+
+.header__social-svg {
+  fill: $white-16;
+
+  &:hover,
+  &:focus {
+    fill: $white-50;
+  }
+}
