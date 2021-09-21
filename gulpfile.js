@@ -142,7 +142,6 @@ const watcher = () => {
 const build = series(
   clean,
   copy,
-  copymodules,
   parallel(
     styles,
     pug,
@@ -151,6 +150,7 @@ const build = series(
     svgstack,
     images,
     createWebp,
+    copymodules,
   ),
 );
 
@@ -159,7 +159,6 @@ exports.build = build;
 exports.default = series(
   clean,
   copy,
-  copymodules,
   parallel(
     styles,
     pug,
@@ -167,6 +166,7 @@ exports.default = series(
     logo,
     svgstack,
     createWebp,
+    copymodules,
   ),
   series(
     server,

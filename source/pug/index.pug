@@ -5,12 +5,13 @@ include layout/section/mixin
 block content
   body.body
     include layout/header
-    main
-      include layout/section/promo
-      include layout/section/party
-      include layout/section/judges
-      include layout/section/ticket
-      include layout/section/contacts
+    main.main
+      .main__wrapper
+        include layout/section/promo
+        include layout/section/party
+        include layout/section/judges
+        include layout/section/ticket
+        include layout/section/contacts
     footer.visually-hidden
     script(src="swiper/swiper-bundle.min.js")
     script(src="js/script.min.js")

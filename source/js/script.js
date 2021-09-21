@@ -1,5 +1,8 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-shadow */
 /* eslint-disable id-length */
+const main = document.querySelector('.main');
+const mainWrapper = main.querySelector('.main__wrapper');
 const header = document.querySelector('.header');
 const menuToggle = header.querySelector('.header__toggle-menu');
 const openMenu = header.querySelector('.header__menu-open-svg');
@@ -32,7 +35,7 @@ const onToggleLang = () => {
   selectLang.classList.toggle('active');
 };
 
-const switchSlides = (buttons, element, items, block) => {
+const switchSlides = (buttons, element, items) => {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
 
@@ -42,19 +45,45 @@ const switchSlides = (buttons, element, items, block) => {
 
       buttons[i].classList.add('active');
       element.textContent = items[i].textContent;
-      block.classList.remove('active');
+      onToggleLang();
     });
   }
 };
 
-const checkWidth = () => {
+const checkWidth1600 = () => {
   if (window.innerWidth >= 1600) {
     onRemoveMenu();
   }
 };
 
-window.addEventListener('resize', checkWidth);
+new Swiper('.main', {
+  loop: true,
+  slidesPerView: 1,
+  direction: 'vertical',
+  // navigation: {
+  //   nextEl: '.reviews__control-button--next',
+  //   prevEl: '.reviews__control-button--prev',
+  // },
+  // pagination: {
+  //   el: '.reviews__pagination',
+  //   type: 'fraction',
+  // },
+});
+
+const onToggleSlider = () => {
+  main.classList.toggle('.swiper-container');
+  mainWrapper.classList.toggle('.swiper-wrapper');
+};
+
+const checkWidth768 = () => {
+  if (window.innerWidth >= 768) {
+    onToggleSlider();
+  }
+};
+
+window.addEventListener('resize', checkWidth768);
+window.addEventListener('resize', checkWidth1600);
 displayLang.addEventListener('click', onToggleLang);
 menuToggle.addEventListener('click', onToggleMenu);
 
-switchSlides(buttonLang, displayLang, langs, selectLang);
+switchSlides(buttonLang, displayLang, langs);
