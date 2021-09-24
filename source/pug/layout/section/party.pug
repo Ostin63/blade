@@ -1,6 +1,3 @@
--const party = [{src: "img/photo-devid.jpg", clarification: "классика, нуар", srcAuthor: "img/devid.png", name: "Дэвид Робинсон", land: "США"}, {src: "img/photo-kelli.jpg", clarification: "авангард, имрессионизм", srcAuthor: "img/kelly.png", name: "Келли Макдональд", land: "ИРЛАНДИЯ"}, {src: "img/photo-kostasi.jpg", clarification: "эклектика, экотренд", srcAuthor: "img/kostas.png", name: "Костас Папаниколау", land: "Греция"}]
--const socialParty = [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}]
-
 mixin party(linkImgs,srcAuthor,name,land, socials)
   .party__item.swiper-slide
     .party__item-wrapper
@@ -8,11 +5,11 @@ mixin party(linkImgs,srcAuthor,name,land, socials)
         .party__img-wrapper.swiper-wrapper
           for i in linkImgs
             .party__img-block.swiper-slide
-              img.party__img(src=i.src, alt="photo" width="448" height="580")
-              span.party__clarification=i.clarification
+              span.party__clarification !{i.clarification}
+              img.party__img(src=i.src, alt="photo")
         .party__arrows-img
-          +svgBlock("party__button-img party__button-img--next", "party__img-svg party__img-svg--next", "10", "20", "arrow")
           +svgBlock("party__button-img party__button-img--prev", "party__img-svg party__img-svg--prev", "10", "20", "arrow")
+          +svgBlock("party__button-img party__button-img--next", "party__img-svg party__img-svg--next", "10", "20", "arrow")
       .party__wrapper-author
         .party__img-mask
           img.party__img-author(src=srcAuthor, alt="Photo author")
@@ -20,18 +17,24 @@ mixin party(linkImgs,srcAuthor,name,land, socials)
         p.party__author-land=land
         ul.party__social
           for i in socials
-            li.party__item
+            li.party__item-social
               a.party__social-link(href="#")
                 svg.party__social-svg(role="img" aria-label=i.alt width=i.width height=i.height)
                   use(xlink:href="img/stack.svg#" +i.name)
-section.party.swiper-slide#2
+
+section.main__swiper-slide.party.swiper-slide#2
   p.party__text-top #bladefashion2019
   h2.party__title Участники
   .party__container.swiper-container
     .party__catalog.swiper-wrapper
-      +party([{src: "img/photo-devid.jpg", clarification: "классика, нуар"}, {src: "img/photo-kelli.jpg", clarification: "авангард, имрессионизм"}, {src: "img/photo-kostasi.jpg", clarification: "эклектика, экотренд"}], "img/devid.png", "Дэвид Робинсон", "США", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
-      +party([{src: "img/photo-kelli.jpg", clarification: "авангард, имрессионизм"}, {src: "img/photo-devid.jpg", clarification: "классика, нуар"}, {src: "img/photo-kostasi.jpg", clarification: "эклектика, экотренд"}], "img/kelly.png", "Келли Макдональд", "ИРЛАНДИЯ", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
-      +party([{src: "img/photo-kostasi.jpg", clarification: "эклектика, экотренд"}, {src: "img/photo-kelli.jpg", clarification: "авангард, имрессионизм"}, {src: "img/photo-devid.jpg", clarification: "классика, нуар"}], "img/kostas.png", "Костас Папаниколау", "Греция", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
-    .party__arrows
-      +svgBlock("party__button party__button--next", "party__svg party__svg--next", "43", "80", "arrow")
-      +svgBlock("party__button party__button--prev", "party__svg party__svg--prev", "43", "80", "arrow")
+      +party([{src: "img/photo-devid.jpg", clarification: "классика,&nbsp;нуар"}, {src: "img/photo-kelli.jpg", clarification: "авангард,&nbsp;имрессионизм"}, {src: "img/photo-kostasi.jpg", clarification: "эклектика,&nbsp;экотренд"}], "img/devid.png", "Дэвид Робинсон", "США", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
+      +party([{src: "img/photo-kelli.jpg", clarification: "авангард,&nbsp;имрессионизм"}, {src: "img/photo-devid.jpg", clarification: "классика&nbsp;нуар"}, {src: "img/photo-kostasi.jpg", clarification: "эклектика,&nbsp;экотренд"}], "img/kelly.png", "Келли Макдональд", "ИРЛАНДИЯ", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
+      +party([{src: "img/photo-kostasi.jpg", clarification: "эклектика,&nbsp;экотренд"}, {src: "img/photo-kelli.jpg", clarification: "авангард,&nbsp;имрессионизм"}, {src: "img/photo-devid.jpg", clarification: "классика,&nbsp;нуар"}], "img/kostas.png", "Костас Папаниколау", "Греция", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
+      +party([{src: "img/photo-devid.jpg", clarification: "классика,&nbsp;нуар"}, {src: "img/photo-kelli.jpg", clarification: "авангард,&nbsp;имрессионизм"}, {src: "img/photo-kostasi.jpg", clarification: "эклектика,&nbsp;экотренд"}], "img/devid.png", "Дэвид Робинсон", "США", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
+      +party([{src: "img/photo-kelli.jpg", clarification: "авангард,&nbsp;имрессионизм"}, {src: "img/photo-devid.jpg", clarification: "классика&nbsp;нуар"}, {src: "img/photo-kostasi.jpg", clarification: "эклектика,&nbsp;экотренд"}], "img/kelly.png", "Келли Макдональд", "ИРЛАНДИЯ", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
+      +party([{src: "img/photo-kostasi.jpg", clarification: "эклектика,&nbsp;экотренд"}, {src: "img/photo-kelli.jpg", clarification: "авангард,&nbsp;имрессионизм"}, {src: "img/photo-devid.jpg", clarification: "классика,&nbsp;нуар"}], "img/kostas.png", "Костас Папаниколау", "Греция", [{name: "insta", width: "18", height: "18", alt: "Мы в Инстаграме"}, {name: "fb", width: "9", height: "18", alt: "Мы в Фейсбуке"}, {name: "twitter", width: "19", height: "15", alt: "Мы в Твиттере"}])
+  .party__arrows
+    +svgBlock("party__button party__button--prev", "party__svg party__svg--prev", "43", "80", "arrow")
+    +svgBlock("party__button party__button--next", "party__svg party__svg--next", "43", "80", "arrow")
+    .party__pagination
+

@@ -66,16 +66,6 @@ const createWebp = () => src('source/img/*.{jpg,png}')
   .pipe(dest('build/img'));
 exports.createWebp = createWebp;
 
-const logo = () => src('source/img/logo/*.svg')
-  .pipe(svgsprite({
-    mode: {
-      stack: {},
-    },
-  }))
-  .pipe(rename('logo.svg'))
-  .pipe(dest('build/img'));
-exports.logo = logo;
-
 const svgstack = () => src('source/img/icons/**/*.svg')
   .pipe(svgsprite({
     mode: {
@@ -146,7 +136,6 @@ const build = series(
     styles,
     pug,
     scripts,
-    logo,
     svgstack,
     images,
     createWebp,
@@ -163,7 +152,6 @@ exports.default = series(
     styles,
     pug,
     scripts,
-    logo,
     svgstack,
     createWebp,
     copymodules,

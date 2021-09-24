@@ -5,13 +5,18 @@ include layout/section/mixin
 block content
   body.body
     include layout/header
-    main.main
-      .main__wrapper
+    main.main.swiper-container
+      .main__wrapper.swiper-wrapper
         include layout/section/promo
         include layout/section/party
         include layout/section/judges
         include layout/section/ticket
         include layout/section/contacts
+      .main__control
+        .main__pagination
+        .main__control-arrows
+          +svgBlock("main__control-button main__control-button--prev", "main__control-svg main__control-svg--prev", "10", "20", "arrow")
+          +svgBlock("main__control-button main__control-button--next", "main__control-svg main__control-svg--next", "10", "20", "arrow")
     footer.visually-hidden
     script(src="swiper/swiper-bundle.min.js")
     script(src="js/script.min.js")
