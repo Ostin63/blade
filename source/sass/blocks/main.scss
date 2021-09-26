@@ -110,3 +110,18 @@
     }
   }
 }
+
+.main__control.active {
+  &::before,
+  &::after {
+    background: $black;
+  }
+
+  .main__pagination {
+    color: $black;
+  }
+
+  .main__control-button {
+    fill: $black;
+  }
+}

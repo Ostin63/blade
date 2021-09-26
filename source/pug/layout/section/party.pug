@@ -22,7 +22,7 @@ mixin party(linkImgs,srcAuthor,name,land, socials)
                 svg.party__social-svg(role="img" aria-label=i.alt width=i.width height=i.height)
                   use(xlink:href="img/stack.svg#" +i.name)
 
-section.main__swiper-slide.party.swiper-slide#2
+section.main__swiper-slide.party.swiper-slide#2(data-hash="#2")
   p.party__text-top #bladefashion2019
   h2.party__title Участники
   .party__container.swiper-container
@@ -36,5 +36,5 @@ section.main__swiper-slide.party.swiper-slide#2
   .party__arrows
     +svgBlock("party__button party__button--prev", "party__svg party__svg--prev", "43", "80", "arrow")
     +svgBlock("party__button party__button--next", "party__svg party__svg--next", "43", "80", "arrow")
-    .party__pagination
+  .party__pagination
 

@@ -83,21 +83,11 @@
   }
 }
 
-.header__menu-open-svg {
-  width: 44px;
-  height: 44px;
-  display: none;
-
-  &.active {
-    display: block;
-  }
-}
-
 .header__menu-open-svg,
 .header__menu-close-svg {
   width: 28px;
   height: 17px;
-  margin: 13px auto;
+  margin: auto;
   fill: $white;
 }
 
@@ -105,6 +95,7 @@
   width: 21px;
   height: 21px;
   display: none;
+  margin-top: 13px;
   fill: $white;
 
   &.active {
@@ -131,6 +122,19 @@
   }
 }
 
+.header__menu-open-svg {
+  width: 44px;
+  height: 44px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &.list {
+    fill: $purpure;
+  }
+}
 
 .header__menu {
   width: 100%;
@@ -214,6 +218,10 @@
     line-height: 22px;
     letter-spacing: 0.02em;
     font-family: $font-lato;
+
+    &.list {
+      color: $black-100;
+    }
   }
 }
 
@@ -242,39 +250,44 @@
   }
 }
 
-.header__select-display {
+.header__wrapper-display {
   display: none;
 
   @media (min-width: $desktop-width) {
     width: 55px;
-    margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    font-family: $font-lato;
-    letter-spacing: -0.02em;
-    color: $white;
-    opacity: 0.64;
-    cursor: pointer;
+  }
+}
 
-    &::after {
-      width: 9px;
-      height: 6px;
-      content: "";
-      display: block;
-      background-image: url("../img/stack.svg#arrow-lang");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
+.header__display-arrow {
+  width: 9px;
+  height: 6px;
+  display: block;
+  fill: $white;
+}
 
-    &.active {
-      &::after {
-        transform: rotate(180deg);
-      }
+.header__display-arrow-svg {
+  width: 9px;
+  height: 6px;
+  display: block;
+}
+
+.header__select-display {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: $font-lato;
+  letter-spacing: -0.02em;
+  color: $white;
+  opacity: 0.64;
+  cursor: pointer;
+
+  &.active {
+    ~.header__display-arrow {
+      transform: rotate(180deg);
     }
   }
 }

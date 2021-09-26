@@ -14,14 +14,18 @@ mixin judges(name, src, land, text, ...items)
                 svg.judges__social-svg(role="img" aria-label="alt" width="24" height="24")
                   use(xlink:href="img/stack.svg#" +item)
 
-section.main__swiper-slide.judges.swiper-slide#3
+section.main__swiper-slide.judges.swiper-slide#3(data-hash="#3")
   p.judges__text-top #bladefashion2019
-  h2.judges__title Судьи BFW`19
+  h2.judges__title Судьи BFW ` 19
   .judges__container.swiper-container
     .judges__catalog.swiper-wrapper
       +judges("Давис Бертанс", "bertans.png", "Литва", "Владелец модного дома в Литве. Судья показов young blood Vilnus.", "fb", "twitter")
       +judges("Георгий Рубильников", "rubilnikov.png", "Россия", "Дизайнер, работающий с Gucci, владелец салона в Санкт-Петербурге.","insta", "fb", "twitter")
       +judges("Давид Гегенешвили", "gegeneshvily.png", "Грузия", "Создатель Georgia Runway Project. Главный судья на young blood Moscow.","insta", "fb")
-    .judges__arrows
-      +svgBlock("judges__button judges__button--next", "judges__svg judges__svg--next", "43", "80", "arrow")
-      +svgBlock("judges__button judges__button--prev", "judges__svg judges__svg--prev", "43", "80", "arrow")
+      +judges("Давис Бертанс", "bertans.png", "Литва", "Владелец модного дома в Литве. Судья показов young blood Vilnus.", "fb", "twitter")
+      +judges("Георгий Рубильников", "rubilnikov.png", "Россия", "Дизайнер, работающий с Gucci, владелец салона в Санкт-Петербурге.","insta", "fb", "twitter")
+      +judges("Давид Гегенешвили", "gegeneshvily.png", "Грузия", "Создатель Georgia Runway Project. Главный судья на young blood Moscow.","insta", "fb")
+    .judges__pagination
+  .judges__arrows
+    +svgBlock("judges__button judges__button--prev", "judges__svg judges__svg--prev", "43", "80", "arrow")
+    +svgBlock("judges__button judges__button--next", "judges__svg judges__svg--next", "43", "80", "arrow")

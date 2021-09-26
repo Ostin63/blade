@@ -17,8 +17,10 @@ const manuLang = header.querySelector('.header__select-menu');
 const displayLang = header.querySelector('.header__select-display');
 const selectLang = header.querySelector('.header__select');
 const langs = header.querySelectorAll('.header__select-link');
+const langArrow = header.querySelector('.header__display-arrow-svg');
 const headerNavLink = header.querySelectorAll('.header__nav-link');
-const swiperSlides = document.querySelectorAll('.swiper-slide');
+const mainControl = main.querySelector('.main__control');
+const swiperSlides = main.querySelectorAll('.swiper-slide');
 
 const onToggleMenu = () => {
   openMenu.classList.toggle('active');
@@ -86,11 +88,37 @@ const mainSwiper = new Swiper('.main', {
     768: {
       slidesPerView: 1,
     },
+    1695: {
+      slidesPerView: 1,
+    },
+  },
+  hashNavigation: {
+    watchState: true,
+  },
+  on: {
+    slideChange: (swiper) => {
+      if (('CurrentActive:', swiper.activeIndex) > 0) {
+        for (let link of headerNavLink) {
+          link.classList.add('list');
+        }
+        displayLang.style.color = '#303030';
+        langArrow.style.fill = '#303030';
+        mainControl.classList.add('active');
+        openMenu.classList.add('list');
+      } else {
+        for (let link of headerNavLink) {
+          link.classList.remove('list');
+        }
+        displayLang.style.color = '#ffffff';
+        langArrow.style.fill = '#ffffff';
+        mainControl.classList.remove('active');
+        openMenu.classList.remove('list');
+      }
+    },
   },
 });
 
 const addMainSwiper = () => {
-
   if (window.innerWidth < 768) {
     for (let slide of swiperSlides) {
       slide.style.height = null;
@@ -133,15 +161,27 @@ new Swiper('.party__container', {
   },
 });
 
-const sectionId = () => {
-  document.querySelector('.main__swiper-slide.swiper-slide-active').id;
-};
-
-if (sectionId() >= 2) {
-  for (let link of headerNavLink) {
-    link.style.color = '#303030';
-  }
-}
+new Swiper('.judges__container', {
+  pagination: {
+    el: '.judges__pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 1.4,
+    },
+    1695: {
+      slidesPerView: 3,
+      navigation: {
+        nextEl: '.judges__button--next',
+        prevEl: '.judges__button--prev',
+      },
+    },
+  },
+});
 
 for (let link of headerNavLink) {
   link.addEventListener('click', onRemoveMenu);

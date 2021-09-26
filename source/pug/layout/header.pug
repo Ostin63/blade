@@ -26,7 +26,10 @@ header.header
         li.header__social-item
           +svgLink("header__social-link", "header__social-svg", "35", "29", "#", "twitter")
   .header__select-menu
-    p.header__select-display РУС
+    .header__wrapper-display
+      p.header__select-display РУС
+      .header__display-arrow
+        +svg("header__display-arrow-svg", "9", "6", "arrow-lang")
     ul.header__select
       li.header__select-item.header__select-item--ru.active
         a.header__select-link.header__select-link--ru(href="#") РУС
