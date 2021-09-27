@@ -13,6 +13,7 @@ $black-90: rgba(48, 48, 48, 0.9);
 $black-text: #1c1515;
 $blue-black: #323c47;
 $gold: #f2c03f;
+$gold-10: rgba(#f2c03f, 0.1);
 $gray: #c4c4c4;
 $special-gray: #f4f4f4;
 $gray-2: #d0d7dd;
@@ -25,6 +26,8 @@ $gradient-purpur: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgb
 $border-16: 1px solid $white-16;
 $border-40: 1px solid $white-40;
 $border-100: 1px solid $black-100;
+$border-gray: 1px solid $gray-2;
+$border-gold: 1px solid $gold;
 
 $shadow-lang: 2px 4px 12px rgba(0, 0, 0, 0.25);
 

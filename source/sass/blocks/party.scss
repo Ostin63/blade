@@ -4,7 +4,8 @@
   background: $white;
 
   @media (min-width: $tablet-width) {
-    padding: 100px 0;
+    height: 1024px;
+    padding: 44px 0 90px;
   }
 
   @media (min-width: $desktop-width) {
@@ -16,7 +17,7 @@
   display: none;
 
   @media (min-width: $tablet-width) {
-    margin: -56px 0 0 162px;
+    margin: 0 0 0 162px;
     display: block;
     font-weight: bold;
     font-size: 17px;

@@ -1,7 +1,7 @@
 mixin pay(cards)
   for i in cards
     li.ticket__pay-item
-      img(src="img/" +i.src, alt="i.alt")
+      img.ticket__pay-img(src="img/" +i.src, width=i.width, height=i.height alt=i.alt)
 
 mixin table(chicked)
   if(chicked)
@@ -15,54 +15,67 @@ section.main__swiper-slide.ticket.swiper-slide#4(data-hash="#4")
   p.ticket__text-top #bladefashion2019
   h2.ticket__title Билеты
   .ticket__wrapper-text
-    p.ticket__text Вы можете приобрести билеты на Blade Fashion Week на нашем сайте: достаточно выбрать один из типов билетов (в зависимости от предлагаемых опций) и произвести оплату онлайн. Мы принимаем оплату:
+    p.ticket__text Вы можете приобрести билеты на Blade Fashion Week на нашем сайте: достаточно выбрать один из типов билетов (в зависимости от предлагаемых опций) и&nbsp;произвести оплату онлайн. Мы принимаем оплату:
     ul.ticket__pay
-      +pay([{src: "visa.png", alt: "виза"}, {src: "pay.png", alt: "пай"}, {src: "master-card.png", alt: "мастер кард"}, {src: "pay-pal.png", alt: "пай пал"}])
-    p.ticket__text По всем вопросам, связанным с покупокй, возвратомили предлагаемыми опциями, вы можете обратиться к нашему консультанту по номеру:
+      +pay([{src: "visa.png", width :"47", height: "15", alt: "виза"}, {src: "pay.png", width :"44", height: "21", alt: "пай"}, {src: "master-card.png", width :"35", height: "27", alt: "мастер кард"}, {src: "pay-pal.png", width :"59", height: "14", alt: "пай пал"}])
+    p.ticket__text По всем вопросам, связанным с покупокй, возвратом или предлагаемыми опциями, вы можете обратиться к&nbsp;нашему консультанту по номеру:
     a.ticket__tel(href="tel:+79244567890") +7 (924) 456 78 90
-  table.ticket__table
-    tr
-      th
-      th ЗРИТЕЛЬ
-      th ОПТИМУМ
-      th VIP
-    tr
-      td Пакет гостя форума
-      +table(true)
-      +table(true)
-      +table(true)
-    tr
-      td Церемония открытия
-      +table(true)
-      +table(true)
-      +table(true)
-    tr
-      td Вход на показ
-      +table(true)
-      +table(true)
-      +table(true)
-    tr
-      td Возможность голосовать
-      +table(false)
-      +table(true)
-      +table(true)
-    tr
-      td Доступ за кулисы
-      +table(false)
-      +table(true)
-      +table(true)
-    tr
-      td Эксклюзив от кутюрье
-      +table(false)
-      +table(false)
-      +table(true)
-    tr
-      td
-      td
-        a.ticket__table-button КУПИТЬ
-      td
-        a.ticket__table-button КУПИТЬ
-      td
-        a.ticket__table-button КУПИТЬ
-
-
+  .ticket__table-wrapper
+    table.ticket__table
+      thead
+        tr
+          th
+          th ЗРИТЕЛЬ
+            .ticket__wrapper-starts.ticket__wrapper-starts--viewer
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+          th ОПТИМУМ
+            .ticket__wrapper-starts.ticket__wrapper-starts--optium
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+          th VIP
+            .ticket__wrapper-starts.ticket__wrapper-starts--vip
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+              +svgBlock("ticket__star", "ticket__star-svg", "16", "16", "star")
+      tbody
+        tr
+          td Пакет гостя форума
+          +table(true)
+          +table(true)
+          +table(true)
+        tr
+          td Церемония открытия
+          +table(true)
+          +table(true)
+          +table(true)
+        tr
+          td Вход на показ
+          +table(true)
+          +table(true)
+          +table(true)
+        tr
+          td Возможность голосовать
+          +table(false)
+          +table(true)
+          +table(true)
+        tr
+          td Доступ за кулисы
+          +table(false)
+          +table(true)
+          +table(true)
+        tr
+          td Эксклюзив от кутюрье
+          +table(false)
+          +table(false)
+          +table(true)
+        tr
+          td
+          td
+            a.ticket__table-button КУПИТЬ
+          td
+            a.ticket__table-button.active КУПИТЬ
+          td
+            a.ticket__table-button КУПИТЬ

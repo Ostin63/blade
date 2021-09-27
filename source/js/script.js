@@ -64,6 +64,37 @@ const checkWidth1700 = () => {
   }
 };
 
+const map = L.map('map')
+  .setView({
+    lat: 55.639146,
+    lng: 37.258471,
+  }, 17);
+
+L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  },
+).addTo(map);
+
+const mainPinIcon = L.icon({
+  iconUrl: 'img/pin-map.png',
+  iconSize: [40, 55],
+  iconAnchor: [20, 55],
+});
+
+const mainPinMarker = L.marker(
+  {
+    lat: 55.639146,
+    lng: 37.258471,
+  },
+  {
+    icon: mainPinIcon,
+  },
+);
+
+mainPinMarker.addTo(map);
+
 const mainSwiper = new Swiper('.main', {
   direction: 'vertical',
   navigation: {

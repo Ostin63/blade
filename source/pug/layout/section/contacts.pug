@@ -1,6 +1,6 @@
 section.main__swiper-slide.contacts.swiper-slide#5(data-hash="#5")
   p.contacts__text-top #bladefashion2019
-  h2.contacts__title Свяжитесь с нами
+  h2.contacts__title Свяжитесь с&nbsp;нами
   .contacts__wrapper-info
     ul.contacts__info
       li.contacts__info-item
@@ -8,10 +8,10 @@ section.main__swiper-slide.contacts.swiper-slide#5(data-hash="#5")
         p.contacts__item-text 363561, Москва <br>ул. Пушкина 17/1
       li.contacts__info-item
         p.contacts__item-title для связи
-      li.contacts__info-item
-        p.contacts__item-title для связи
-        a.contacts__item-tel(href="tel:+79244567890") +7 (924) 456 78 90
-        a.contacts__item-mail(href="mailto: bfw@gmail.com") bfw@gmail.com
+        .contacts__item-text-wrapper
+          a.contacts__item-text.contacts__item-text--tel(href="tel:+79244567890") +7 (924) 456 78 90
+          a.contacts__item-text.contacts__item-text--mail(href="mailto: bfw@gmail.com") bfw@gmail.com
+        p.contacts__item-title подпишитесь
         ul.contacts__social
           li.contacts__social-item
             +svgBlock("contacts__wrapper-svg", "contacts__svg", "24", "24", "fb")
@@ -20,7 +20,7 @@ section.main__swiper-slide.contacts.swiper-slide#5(data-hash="#5")
           li.contacts__social-item
             +svgBlock("contacts__wrapper-svg", "contacts__svg", "24", "24", "twitter")
     .contacts__wrapper-map
-      .contacts__map#contacts__map
+      .contacts__map#map
   .contacts__form-wrapper
     h2.contacts__title Отсались вопросы? Спросите нас! Мы ответим!
     form.contacts__form#contacts__form(action="", method="post")
