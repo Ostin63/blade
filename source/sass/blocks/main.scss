@@ -11,6 +11,8 @@
 }
 
 .main__control {
+  display: none;
+
   @media (min-width: $tablet-width) {
     position: absolute;
     width: 108px;
@@ -112,6 +114,7 @@
 }
 
 .main__control.active {
+
   &::before,
   &::after {
     background: $black;

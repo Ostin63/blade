@@ -22,8 +22,9 @@ section.main__swiper-slide.contacts.swiper-slide#5(data-hash="#5")
     .contacts__wrapper-map
       .contacts__map#map
   .contacts__form-wrapper
-    h2.contacts__title Отсались вопросы? Спросите нас! Мы ответим!
-    form.contacts__form#contacts__form(action="", method="post")
+    h3.contacts__question-title Отсались вопросы? Спросите нас! Мы&nbsp;ответим!
+    a.contacts__link ЗАДАТЬ ВОПРОС
+    form.contacts__form#contacts-form(action="", method="post")
       .contacts__form-input-block
         label.contacts__form-label(for="fullName") имя
         input.contacts__form-input#fullName(type="text", name="fullName", placeholder="Введите имя")

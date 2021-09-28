@@ -21,6 +21,9 @@ const langArrow = header.querySelector('.header__display-arrow-svg');
 const headerNavLink = header.querySelectorAll('.header__nav-link');
 const mainControl = main.querySelector('.main__control');
 const swiperSlides = main.querySelectorAll('.swiper-slide');
+const openForm = document.querySelector('.contacts__link');
+const formInput = document.querySelector('.modal-form');
+const closeForm = document.querySelector('.modal-form__close');
 
 const onToggleMenu = () => {
   openMenu.classList.toggle('active');
@@ -218,9 +221,19 @@ for (let link of headerNavLink) {
   link.addEventListener('click', onRemoveMenu);
 }
 
+const onOpenForm = () => {
+  formInput.classList.add('active');
+};
+
+const onCloseForm = () => {
+  formInput.classList.remove('active');
+};
+
 window.addEventListener('resize', addMainSwiper);
 window.addEventListener('resize', checkWidth1700);
 displayLang.addEventListener('click', onToggleLang);
 menuToggle.addEventListener('click', onToggleMenu);
+openForm.addEventListener('click', onOpenForm);
+closeForm.addEventListener('click', onCloseForm);
 
 switchSlides(buttonLang, displayLang, langs);

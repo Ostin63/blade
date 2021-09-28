@@ -1,0 +1,16 @@
+.modal-form
+  .modal-form__top
+    +svgBlock("modal-form__logo", "modal-form__svg-logo", "138", "92", "top-logo")
+    +svgBlock("modal-form__close", "modal-form__close-svg", "28", "28", "close")
+  h3.modal-form__question-title Отсались вопросы? Спросите нас! Мы&nbsp;ответим!
+  form.modal-form__form#form-modal(action="", method="post")
+    .modal-form__input-block
+      label.modal-form__label(for="fullName") имя
+      input.modal-form__input#fullName(type="text", name="fullName", placeholder="Введите имя")
+    .modal-form__input-block
+      label.modal-form__label(for="email") email
+      input.modal-form__input#email(type="email", name="email", placeholder="Введите e-mail")
+    .modal-form__input-block
+      label.modal-form__label(for="textarea") Сообщение
+      textarea.modal-form__textarea#textarea(name="textarea", cols="30", rows="5", placeholder="Задайте любой вопрос")
+    button.modal-form__submit(type="submit") отправить

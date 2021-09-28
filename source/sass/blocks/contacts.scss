@@ -1,5 +1,5 @@
 .contacts {
-  height: 1032px;
+  height: 1109px;
   padding-bottom: 77px;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .contacts__item-title {
-  margin: 32px 0 16px;
+  margin: 30px 0 15px;
   font-weight: bold;
   font-size: 14px;
   line-height: 21px;
@@ -98,10 +98,58 @@
   fill: $black-24;
 }
 
-// .contacts__wrapper-map {}
+.contacts__wrapper-map {
+  padding: 40px 0 0;
+}
 
 .contacts__map {
   position: relative;
   width: 100%;
-  height: 539px;
+  height: 359px;
+}
+
+.contacts__question-title {
+  width: 221px;
+  margin: 30px 0 20px 16px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 120%;
+  font-family: $font-lato;
+  color: $black-100;
+}
+
+.contacts__link {
+  width: 274px;
+  height: 68px;
+  padding-left: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $white;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: $font-lato;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: $black-100;
+  filter: $shadow-button;
+  cursor: pointer;
+
+  &::after {
+    width: 78px;
+    height: 68px;
+    content: "";
+    display: block;
+    background-color: $gold;
+    background-image: url("../img/stack.svg#arrow-button");
+    background-repeat: no-repeat;
+    background-size: 36px auto;
+    background-position: 50%;
+  }
+}
+
+.contacts__form {
+  display: none;
 }
